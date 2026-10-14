@@ -69,7 +69,7 @@ def _conectar(self):
                             cursor.close()
                             conexion.close()
 
-                            def obtener_por_id(self, mascotas)
+                            def obtener_por_id(self, mascotas):
                                 conexion = self._conectar()
                                 if not conexion:
                                     return None
@@ -86,7 +86,7 @@ def _conectar(self):
                                 cursor.close()
                             conexion.close()
 
-                    f actualizar(self, mascotas_id, nombre , razas):
+                    def actualizar(self, mascotas_id, nombre , razas)
                     conexion = self._conectar()
                     if not conexion:
                                             
@@ -98,3 +98,26 @@ def _conectar(self):
                         cursor.execute(sql,(nombre, raza,mascota))
                         conexion.commit()
                         return True
+                    except error as e:
+                        print(F"Error al actalizar mascotas: {e}")
+                        return False
+                    finally:
+                        cursor.close()
+                        cursor.close()
+
+                        def eliminar(self , mascotas_id):
+                            conexion = self._conectar()
+                            if not conexion: 
+                                return False
+                            try:
+                                cursor = conexion.cursor()
+                                sql = "DELETE FROM mascotas WHERE id= %s"
+                                cursor.execute(sql, (mascotas_id))
+                                conexion.commit()
+                                return True
+                            except Error as e:
+                                print(F"Error al eliminar mascota: {e}")
+                                return False
+                            finally:
+                                cursor.close()
+                                conexion.close()
